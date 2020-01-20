@@ -1,0 +1,12 @@
+B-Facility
+B-LocOrg
+B-Location
+B-Org
+B-Person
+B-Project
+I-Facility
+I-LocOrg
+I-Location
+I-Org
+I-Person
+O
