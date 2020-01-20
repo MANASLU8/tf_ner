@@ -232,7 +232,7 @@ if __name__ == '__main__':
             for golds, preds in zip(golds_gen, preds_gen):
                 ((words, _), tags) = golds
                 for word, tag, tag_pred in zip(words, tags, preds[mode]):
-                    f.write(b' '.join([word, tag, tag_pred]) + b'\n')
+                    f.write(b' '.join([word, tag_pred]) + b'\n')
                 f.write(b'\n')
 
     for name in ['train', 'testa', 'testb']:

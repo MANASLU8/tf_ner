@@ -19,6 +19,9 @@ def reformat_file(filename):
             sentence = []
         else:
             sentence.append(line)
+    # Add the last sentence
+    words.append(' '.join(map(lambda token: token.split(' ')[0], sentence)))
+    labels.append(' '.join(map(lambda token: token.split(' ')[-1], sentence)))
     return words, labels
 
 

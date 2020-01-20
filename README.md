@@ -9,6 +9,7 @@ python convert_data_from_conll2003.py --input /home/dima/tener/data/conll2003ru-
 cd models/lstm_crf
 python main.py --data ../../data/conll2003ru
 ```
+To train on google colab use [this notebook](https://colab.research.google.com/drive/1Bi8iPqva9H8RliMdXnNGRtbE9Iw2aE3z).
 ### Compute metrics
 ```sh
 ../conlleval < results/score/testa.preds.txt > results/score/score.testa.metrics.txt
