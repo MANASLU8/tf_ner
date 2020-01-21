@@ -1,7 +1,7 @@
 from pathlib import Path
 import functools
 
-def write_predictions(name):
+def write_predictions(name, input_fn, fwords, ftags, generator_fn, estimator):
     Path('results/score').mkdir(parents=True, exist_ok=True)
     with Path('results/score/{}.preds.txt'.format(name)).open('wb') as f:
         test_inpf = functools.partial(input_fn, fwords(name), ftags(name))
@@ -13,7 +13,7 @@ def write_predictions(name):
                 f.write(b' '.join([word, tag_pred]) + b'\n')
             f.write(b'\n')
 
-def write_predictions_ema(name, mode):
+def write_predictions_ema(name, mode, input_fn, fwords, ftags, generator_fn, estimator):
         Path('results/score').mkdir(parents=True, exist_ok=True)
         with Path('results/score/{}.{}.preds.txt'.format(name, mode)).open('wb') as f:
             test_inpf = functools.partial(input_fn, fwords(name), ftags(name))

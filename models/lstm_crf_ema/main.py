@@ -217,6 +217,6 @@ if __name__ == '__main__':
 
     for name in ['train', 'testa', 'testb']:
         for mode in ['tags', 'tags_ema']:
-            write_predictions_ema(name, mode)
+            write_predictions_ema(name, mode, input_fn, fwords, ftags, generator_fn, estimator)
         print("Predictions are written to the files")
 

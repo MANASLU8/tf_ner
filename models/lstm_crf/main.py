@@ -173,4 +173,4 @@ if __name__ == '__main__':
 
     # Write predictions to file
     for name in ['train', 'testa', 'testb']:
-        write_predictions(name)
+        write_predictions(name, input_fn, fwords, ftags, generator_fn, estimator)
