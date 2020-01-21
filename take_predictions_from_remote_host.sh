@@ -1,0 +1,2 @@
+scp nami@co.ma:/home/nami/tf_ner/models/chars_conv_lstm_crf/testb.preds.txt ~/ner-comparison/eval.tagged.chars_conv_lstm_crf.txt
+scp nami@co.ma:/home/nami/tf_ner/models/chars_conv_lstm_crf_ema/testb.preds.tags_ema.txt ~/ner-comparison/eval.tagged.chars_conv_lstm_crf_ema.txt

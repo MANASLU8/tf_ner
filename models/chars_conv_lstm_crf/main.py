@@ -17,7 +17,7 @@ from masked_conv import masked_conv1d_and_max
 
 sys.path.append('../..')
 from config_reader import get_config
-from predictions_writer import write_predictions
+from predictions_writer import write_predictions_conv
 
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
@@ -212,4 +212,4 @@ if __name__ == '__main__':
     # Write predictions to file
 
     for name in ['train', 'testa', 'testb']:
-        write_predictions(name, input_fn, fwords, ftags, generator_fn, estimator)
+        write_predictions_conv(name, input_fn, fwords, ftags, generator_fn, estimator)
