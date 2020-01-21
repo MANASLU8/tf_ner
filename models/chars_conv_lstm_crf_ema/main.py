@@ -19,6 +19,10 @@ sys.path.append('../..')
 from config_reader import get_config
 from predictions_writer import write_predictions_ema
 
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+session = tf.Session(config=config)
+
 # Logging
 Path('results').mkdir(exist_ok=True)
 tf.logging.set_verbosity(logging.INFO)
@@ -245,7 +249,7 @@ if __name__ == '__main__':
     cfg = tf.estimator.RunConfig(save_checkpoints_secs=120)
     estimator = tf.estimator.Estimator(model_fn, 'results/model', cfg, params)
     Path(estimator.eval_dir()).mkdir(parents=True, exist_ok=True)
-    hook = tf.estimator.experimental.stop_if_no_increase_hook(
+    hook = tf.contrib.estimator.stop_if_no_increase_hook(
         estimator, 'f1_ema', 500, min_steps=8000, run_every_secs=120)
     train_spec = tf.estimator.TrainSpec(input_fn=train_inpf, hooks=[hook])
     eval_spec = tf.estimator.EvalSpec(input_fn=eval_inpf, throttle_secs=120)

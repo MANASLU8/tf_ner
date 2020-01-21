@@ -25,7 +25,9 @@ cd models/lstm_crf_ema
 python main.py --data ../../data/conll2003ru
 ```
 To train on google colab use [this notebook](https://colab.research.google.com/drive/1JGg28CBpTulc2UZAFZYVXq7i9aSmSx7e).
-## CHARS_CONV_LSTM_CRF_EMA does not work because of compatibility issues (requires tensorflow_gpu==1.8)
+## Run CHARS_CONV_LSTM_CRF_EMA and CHARS_CONV_LSTM_CRF
+**Requires python==3.6 + tensorflow-gpu==1.11 + cuda==9.0 + cudnn==7.6**
+# Project structure
 Each folder contains a __standalone__, __short (~100 lines of Tensorflow)__, `main.py` that implements a neural-network based model for Named Entity Recognition (NER) using [`tf.estimator`](https://www.tensorflow.org/guide/custom_estimators) and [`tf.data`](https://www.tensorflow.org/guide/datasets).
 
 ![Named Entity Recognition](images/ner.png)
