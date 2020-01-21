@@ -1,0 +1,15 @@
+dim: 100
+dim_chars: 25
+dropout: 0.5
+num_oov_buckets: 1
+epochs: 25
+batch_size: 20
+buffer: 15000
+lstm_size: 100
+char_lstm_size: 25
+filters: 50
+kernel_size: 3
+words: vocab.words.txt
+chars: vocab.chars.txt
+tags: vocab.tags.txt
+glove: glove.npz
