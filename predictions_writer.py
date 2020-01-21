@@ -1,4 +1,5 @@
 from pathlib import Path
+import functools
 
 def write_predictions(name):
     Path('results/score').mkdir(parents=True, exist_ok=True)
