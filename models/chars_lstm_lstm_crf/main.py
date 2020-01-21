@@ -1,7 +1,7 @@
 """GloVe Embeddings + chars bi-LSTM + bi-LSTM + CRF"""
 
 __author__ = "Guillaume Genthial"
-
+import argparse
 import functools
 import json
 import logging
@@ -12,7 +12,9 @@ import numpy as np
 import tensorflow as tf
 from tf_metrics import precision, recall, f1
 
-DATADIR = '../../data/example'
+sys.path.append('../..')
+from config_reader import get_config
+from predictions_writer import write_predictions
 
 # Logging
 Path('results').mkdir(exist_ok=True)
@@ -179,30 +181,22 @@ def model_fn(features, labels, mode, params):
 
 
 if __name__ == '__main__':
-    # Params
-    params = {
-        'dim': 300,
-        'dim_chars': 100,
-        'dropout': 0.5,
-        'num_oov_buckets': 1,
-        'epochs': 25,
-        'batch_size': 20,
-        'buffer': 15000,
-        'char_lstm_size': 25,
-        'lstm_size': 100,
-        'words': str(Path(DATADIR, 'vocab.words.txt')),
-        'chars': str(Path(DATADIR, 'vocab.chars.txt')),
-        'tags': str(Path(DATADIR, 'vocab.tags.txt')),
-        'glove': str(Path(DATADIR, 'glove.npz'))
-    }
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--data', type=str, default='../../data/conll2003ru')
+
+    args = parser.parse_args()
+    
+    params = get_config(args.data)
+
     with Path('results/params.json').open('w') as f:
         json.dump(params, f, indent=4, sort_keys=True)
 
     def fwords(name):
-        return str(Path(DATADIR, '{}.words.txt'.format(name)))
+        return str(Path(args.data, '{}.words.txt'.format(name)))
 
     def ftags(name):
-        return str(Path(DATADIR, '{}.tags.txt'.format(name)))
+        return str(Path(args.data, '{}.tags.txt'.format(name)))
 
     # Estimator, train and evaluate
     train_inpf = functools.partial(input_fn, fwords('train'), ftags('train'),
@@ -212,24 +206,13 @@ if __name__ == '__main__':
     cfg = tf.estimator.RunConfig(save_checkpoints_secs=120)
     estimator = tf.estimator.Estimator(model_fn, 'results/model', cfg, params)
     Path(estimator.eval_dir()).mkdir(parents=True, exist_ok=True)
-    hook = tf.contrib.estimator.stop_if_no_increase_hook(
+    hook = tf.estimator.experimental.stop_if_no_increase_hook(
         estimator, 'f1', 500, min_steps=8000, run_every_secs=120)
     train_spec = tf.estimator.TrainSpec(input_fn=train_inpf, hooks=[hook])
     eval_spec = tf.estimator.EvalSpec(input_fn=eval_inpf, throttle_secs=120)
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_spec)
 
     # Write predictions to file
-    def write_predictions(name):
-        Path('results/score').mkdir(parents=True, exist_ok=True)
-        with Path('results/score/{}.preds.txt'.format(name)).open('wb') as f:
-            test_inpf = functools.partial(input_fn, fwords(name), ftags(name))
-            golds_gen = generator_fn(fwords(name), ftags(name))
-            preds_gen = estimator.predict(test_inpf)
-            for golds, preds in zip(golds_gen, preds_gen):
-                ((words, _), (_, _)), tags = golds
-                for word, tag, tag_pred in zip(words, tags, preds['tags']):
-                    f.write(b' '.join([word, tag, tag_pred]) + b'\n')
-                f.write(b'\n')
 
     for name in ['train', 'testa', 'testb']:
         write_predictions(name)

@@ -13,7 +13,9 @@ import numpy as np
 import tensorflow as tf
 from tf_metrics import precision, recall, f1
 
-#DATADIR = '../../data/example'
+sys.path.append('../..')
+from config_reader import get_config
+from predictions_writer import write_predictions
 
 # Logging
 Path('results').mkdir(exist_ok=True)
@@ -144,20 +146,8 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    # Params
-    params = {
-        'dim': 100,
-        'dropout': 0.5,
-        'num_oov_buckets': 1,
-        'epochs': 25,
-        'batch_size': 20,
-        'buffer': 15000,
-        'lstm_size': 100,
-        'words': str(Path(args.data, 'vocab.words.txt')),
-        'chars': str(Path(args.data, 'vocab.chars.txt')),
-        'tags': str(Path(args.data, 'vocab.tags.txt')),
-        'glove': str(Path(args.data, 'glove.npz'))
-    }
+    params = get_config(args.data)
+
     with Path('results/params.json').open('w') as f:
         json.dump(params, f, indent=4, sort_keys=True)
 
@@ -182,17 +172,5 @@ if __name__ == '__main__':
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_spec)
 
     # Write predictions to file
-    def write_predictions(name):
-        Path('results/score').mkdir(parents=True, exist_ok=True)
-        with Path('results/score/{}.preds.txt'.format(name)).open('wb') as f:
-            test_inpf = functools.partial(input_fn, fwords(name), ftags(name))
-            golds_gen = generator_fn(fwords(name), ftags(name))
-            preds_gen = estimator.predict(test_inpf)
-            for golds, preds in zip(golds_gen, preds_gen):
-                ((words, _), tags) = golds
-                for word, tag, tag_pred in zip(words, tags, preds['tags']):
-                    f.write(b' '.join([word, tag_pred]) + b'\n')
-                f.write(b'\n')
-
     for name in ['train', 'testa', 'testb']:
         write_predictions(name)
