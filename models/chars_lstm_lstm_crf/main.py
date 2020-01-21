@@ -14,7 +14,7 @@ from tf_metrics import precision, recall, f1
 
 sys.path.append('../..')
 from config_reader import get_config
-from predictions_writer import write_predictions
+from predictions_writer import write_predictions_conv
 
 # Logging
 Path('results').mkdir(exist_ok=True)
@@ -215,4 +215,4 @@ if __name__ == '__main__':
     # Write predictions to file
 
     for name in ['train', 'testa', 'testb']:
-        write_predictions(name, input_fn, fwords, ftags, generator_fn, estimator)
+        write_predictions_conv(name, input_fn, fwords, ftags, generator_fn, estimator)
