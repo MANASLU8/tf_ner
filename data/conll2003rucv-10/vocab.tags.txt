@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-=======
-B-Loc
->>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 B-LocOrg
 B-Location
 B-Org
 B-Person
-<<<<<<< HEAD
-=======
-I-Loc
->>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 I-LocOrg
 I-Location
 I-Org
