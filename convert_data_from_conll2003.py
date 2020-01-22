@@ -30,11 +30,13 @@ def convert(input_folder, output_folder):
     if not os.path.isdir(output_folder):
         os.mkdir(output_folder)
     
-    words, tags = reformat_file(f'{input_folder}/{TEST_A_CONLL2003_FILE_NAME}')
+    test_a_filename = f'{input_folder}/{TEST_A_CONLL2003_FILE_NAME}'
+    words, tags = reformat_file(test_a_filename)
     write_lines(f'{output_folder}/testa.words.txt', words)
     write_lines(f'{output_folder}/testa.tags.txt', tags)
 
-    words, tags = reformat_file(f'{input_folder}/{TEST_B_CONLL2003_FILE_NAME}')
+    test_b_filename = f'{input_folder}/{TEST_B_CONLL2003_FILE_NAME}'
+    words, tags = reformat_file(test_b_filename if os.path.isfile(test_b_filename) else test_a_filename)
     write_lines(f'{output_folder}/testb.words.txt', words)
     write_lines(f'{output_folder}/testb.tags.txt', tags)
 

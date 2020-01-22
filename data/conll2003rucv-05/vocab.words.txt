@@ -5,18 +5,30 @@ $
 %
 &
 '
+<<<<<<< HEAD
+=======
+'s
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 (
 )
 *
 +
+<<<<<<< HEAD
+=======
++1
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 +100500
 ,
 -
 -ной
 .
 ...
+<<<<<<< HEAD
 .eu
 .РФ
+=======
+.1
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 /
 0
 0,111
@@ -44,7 +56,10 @@ $
 085
 09
 1
+<<<<<<< HEAD
 1+1
+=======
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 1,1
 1,15
 1,2
@@ -1050,8 +1065,12 @@ China
 Chosun
 Christian
 Christiane
+<<<<<<< HEAD
 Christie's
 Christie’s
+=======
+Christie
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 Christopher
 Chrome
 Chrysler
@@ -1905,7 +1924,11 @@ Sodeco
 Soir
 Sonia
 Soros
+<<<<<<< HEAD
 Sotheby's
+=======
+Sotheby
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 Sothebys
 Sotomayor
 Soumaila
@@ -2174,6 +2197,10 @@ e-mail
 eBay
 el
 el-Masri
+<<<<<<< HEAD
+=======
+eu
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 exchanged
 exit
 face
@@ -2185,7 +2212,11 @@ float
 free
 future
 government
+<<<<<<< HEAD
 harvest.greenfield-project.ru
+=======
+harvest.greenfield-project
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 hetq
 html
 http
@@ -2207,7 +2238,11 @@ ixzz2DhM35CDk
 ixzz2HTqaETGN
 ixzz2JXxdziul
 kg
+<<<<<<< HEAD
 kino.1tv.ru
+=======
+kino
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 kz
 la
 le
@@ -2262,6 +2297,10 @@ tiphareth
 to
 tour
 tut
+<<<<<<< HEAD
+=======
+tv.ru
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 two
 ua
 und
@@ -5561,6 +5600,10 @@ zyalt
 Европейский
 Европейского
 Европейской
+<<<<<<< HEAD
+=======
+Европейском
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 Европу
 Европы
 Евросоюз
@@ -9936,7 +9979,10 @@ zyalt
 Очередное
 Ошибки
 Ояра
+<<<<<<< HEAD
 О’Рейли
+=======
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 П
 ПАО
 ПАРНАС
@@ -15925,7 +15971,10 @@ zyalt
 аттестованных
 аудиенции
 аудио
+<<<<<<< HEAD
 аудио-
+=======
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 аудиозапись
 аудитора
 аудиторией
@@ -21615,6 +21664,10 @@ zyalt
 житель
 жительницы
 жительства
+<<<<<<< HEAD
+=======
+жительство
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 жителя
 жителям
 жителями
@@ -24355,7 +24408,10 @@ zyalt
 кинематографистов
 кинескоп
 кино
+<<<<<<< HEAD
 кино-
+=======
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 кинодив
 кинопроекта
 кинопроизводство
@@ -41516,7 +41572,10 @@ zyalt
 среде
 среди
 средне
+<<<<<<< HEAD
 средне-
+=======
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 среднего
 среднее
 средней
@@ -42620,7 +42679,10 @@ zyalt
 тел
 тела
 теле
+<<<<<<< HEAD
 теле-
+=======
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 телеведущая
 телеведущего
 телеведущий
@@ -46407,6 +46469,11 @@ zyalt
 ё
 –
 —
+<<<<<<< HEAD
+=======
+’
+’s
+>>>>>>> ed0da989ef9eb802fd2a0e93f82038a5c1f76f78
 “
 ”
 „
