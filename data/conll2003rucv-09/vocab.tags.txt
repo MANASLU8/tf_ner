@@ -1,0 +1,11 @@
+B-Loc
+B-LocOrg
+B-Location
+B-Org
+B-Person
+I-Loc
+I-LocOrg
+I-Location
+I-Org
+I-Person
+O

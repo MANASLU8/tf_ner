@@ -1,0 +1,10 @@
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/01 --output data/conll2003rucv-01
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/02 --output data/conll2003rucv-02
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/03 --output data/conll2003rucv-03
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/04 --output data/conll2003rucv-04
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/05 --output data/conll2003rucv-05
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/06 --output data/conll2003rucv-06
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/07 --output data/conll2003rucv-07
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/08 --output data/conll2003rucv-08
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/09 --output data/conll2003rucv-09
+python convert_data_from_conll2003.py --input /home/dima/fact-ru-eval2stanford/conll2003rucv/10 --output data/conll2003rucv-10
